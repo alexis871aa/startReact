@@ -1,7 +1,9 @@
-import logo from './logo.svg';
+import logo from './logo.svg'; // раздел импортов
 import './App.css';
 
 export const App = () => {
+	const date = new Date(); // императивный стиль
+	// ниже идёт декларативный стиль
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -18,6 +20,7 @@ export const App = () => {
 					Learn React
 				</a>
 			</header>
+			<footer className="App-footer">{`${date.getFullYear()} год`}</footer>
 		</div>
 	);
 };
