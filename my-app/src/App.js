@@ -1,40 +1,26 @@
 import logo from './logo.svg'; // раздел импортов
 import './App.css';
-import { createElement } from 'react';
 
 export const App = () => {
 	const date = new Date(); // императивный стиль
 	// ниже идёт декларативный стиль
-	return createElement(
-		'div',
-		{
-			className: 'App',
-		},
-		createElement(
-			'header',
-			{
-				className: 'App-header',
-			},
-			createElement('img', {
-				src: logo,
-				className: 'App-logo',
-				alt: 'logo',
-			}),
-			createElement(
-				'p',
-				null,
-				'Edit ',
-				createElement('code', null, 'src/App.js'),
-				' and save to reload.',
-			),
-			createElement('a', {}, 'Learn React'),
-		),
-		createElement(
-			'footer',
-			{
-				className: 'App-footer',
-			},
-			`${date.getFullYear()} год`,
-		),
+	return (
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="logo" />
+				<p>
+					Edit <code>src/App.js</code> and save to reload.
+				</p>
+				<a
+					className="App-link"
+					href="https://reactjs.org"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Learn React
+				</a>
+			</header>
+			<footer className="App-footer">{`${date.getFullYear()} год`}</footer>
+		</div>
 	);
 };
